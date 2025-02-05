@@ -11,16 +11,17 @@ import java.util.List;
 public class PostService {
     List<Post> posts = new ArrayList<>();
     {
-        posts.add(new Post("Первый пост - я впервые в интернете, вроде все хорошие", new Date(125,1,1)));
-        posts.add(new Post("Второй пост - я пытался познакомиться с кем-то, но мне написали, что я скучный(",new Date(125,1,1)));
-        posts.add(new Post("Третий пост - мне написал какой-то парень и предложил поиграть в майнкрафт вместе, я рад:3",new Date(125,1,1)));
+        posts.add(new Post(0L,"Первый пост - я впервые в интернете, вроде все хорошие", new Date(125,1,1)));
+        posts.add(new Post(1L,"Второй пост - я пытался познакомиться с кем-то, но мне написали, что я скучный(",new Date(125,1,1)));
+        posts.add(new Post(2L,"Третий пост - мне написал какой-то парень и предложил поиграть в майнкрафт вместе, я рад:3",new Date(125,1,1)));
     }
     public List<Post> listAllPosts()
     {
         return posts;
     }
 
-    public void create(String text) {
-        posts.add(new Post(text, new Date()));
+    public void create(String text)
+    {
+        posts.add(new Post((long) posts.size(),text, new Date()));
     }
 }
